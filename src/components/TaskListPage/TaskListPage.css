@@ -122,7 +122,8 @@
 /* Tablet (768px+) */
 @media (min-width: 768px) {
   .task-list-page-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
+    gap: 1rem;
   }
 
   .task-list-page-title {
@@ -130,14 +131,12 @@
   }
 
   .task-list-controls-top {
-    flex-direction: row;
-    align-items: stretch;
+    grid-template-columns: 1fr auto;
     gap: 1rem;
   }
 
   .filters-desktop {
-    display: block;
-    flex: 1;
+    display: none;
   }
 
   .filter-modal-overlay {
@@ -165,8 +164,22 @@
 
 /* Desktop (1024px+) */
 @media (min-width: 1024px) {
+  .task-list-page-header {
+    margin-bottom: 1.5rem;
+    gap: 1.25rem;
+  }
+
   .task-list-page-title {
     font-size: 2rem;
+  }
+
+  .task-list-controls-top {
+    grid-template-columns: 1fr auto;
+    gap: 1.25rem;
+  }
+
+  .task-list-page-controls {
+    margin-bottom: 2rem;
   }
 }
 

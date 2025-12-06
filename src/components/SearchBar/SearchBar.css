@@ -90,8 +90,9 @@
 /* Tablet and Desktop (768px+) */
 @media (min-width: 768px) {
   .search-bar {
-    flex: 0.4;
-    width: auto;
+    width: 100%;
+    min-width: 300px;
+    max-width: 500px;
   }
 }
 
