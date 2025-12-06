@@ -1,0 +1,144 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding: 0.75rem;
+}
+
+.app-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.app-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.app-controls-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.filters-desktop {
+  display: none;
+}
+
+.filter-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1500;
+  animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.filter-modal-content {
+  background: var(--card-bg);
+  border-radius: 1rem 1rem 0 0;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  overflow-y: auto;
+  animation: slideUpMobile 0.3s;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideUpMobile {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile (320px - 640px) */
+@media (min-width: 480px) {
+  .app-main {
+    padding: 1rem;
+  }
+  
+  .app-controls {
+    gap: 1rem;
+  }
+}
+
+/* Tablet (641px - 1024px) */
+@media (min-width: 768px) {
+  .app-main {
+    padding: 1.5rem;
+  }
+
+  .app-controls {
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .app-controls-top {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .filters-desktop {
+    display: none;
+  }
+
+  .filter-modal-overlay {
+    align-items: center;
+  }
+
+  .filter-modal-content {
+    border-radius: 1rem;
+    max-width: 900px;
+    max-height: 85vh;
+    animation: slideUpDesktop 0.3s;
+  }
+
+  @keyframes slideUpDesktop {
+    from {
+      transform: translateY(-20px) scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+}
+
+/* Desktop (1025px+) */
+@media (min-width: 1024px) {
+  .app-main {
+    padding: 2rem;
+  }
+}
+
+

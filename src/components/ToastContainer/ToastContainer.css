@@ -1,0 +1,19 @@
+.toast-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 3000;
+  pointer-events: none;
+}
+
+.toast-container > * {
+  pointer-events: auto;
+}
+
+@media (max-width: 640px) {
+  .toast-container {
+    right: 0.5rem;
+    left: 0.5rem;
+  }
+}
+

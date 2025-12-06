@@ -1,0 +1,77 @@
+.task-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  min-height: 50px;
+}
+
+.task-list.dragging-over {
+  background-color: rgba(99, 102, 241, 0.05);
+  border-radius: 0.75rem;
+  min-height: 200px;
+  padding: 1rem;
+}
+
+.task-list-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  padding: 1.5rem;
+}
+
+/* Tablet (768px+) - Show 2 columns */
+@media (min-width: 768px) {
+  .task-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .task-list.dragging-over {
+    padding: 1.25rem;
+  }
+
+  .task-list-empty {
+    min-height: 400px;
+    padding: 2rem;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .task-list {
+    gap: 1.5rem;
+  }
+}
+
+.empty-state {
+  text-align: center;
+  max-width: 400px;
+  padding: 1rem;
+}
+
+.empty-icon {
+  color: var(--text-secondary);
+  margin: 0 auto 1rem;
+  display: block;
+}
+
+.empty-state h3 {
+  font-size: 1.125rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.empty-state p {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+/* Tablet and Desktop */
+@media (min-width: 768px) {
+  .empty-state h3 {
+    font-size: 1.25rem;
+  }
+}
+
+
